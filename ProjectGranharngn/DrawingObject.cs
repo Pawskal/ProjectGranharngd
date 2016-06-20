@@ -12,17 +12,13 @@ namespace ProjectGranharngn
 
         protected Rectangle drawRect;
 
-        //protected float _xStartPos, _yStartPos;
         protected ObjectData[,] data;
-        
-        //protected int width, height;
 
         protected DrawingObject() : this(0, 0, 1, 1 ) { }
 
         protected DrawingObject(int xPos, int yPos) : this(xPos, yPos, 1, 1) { }
 
         protected DrawingObject(int xPos, int yPos, int width, int height) {
-
 
             drawRect.X = xPos;
             drawRect.Y = yPos;

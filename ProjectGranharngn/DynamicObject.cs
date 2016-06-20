@@ -39,9 +39,7 @@ namespace ProjectGranharngn
                     vSpeed = value;
                 else
                 {
-                    Exception e = new Exception();
-                    vSpeed = 0;
-                    throw e;
+                   vSpeed = 0;
                 }
             }
         }
