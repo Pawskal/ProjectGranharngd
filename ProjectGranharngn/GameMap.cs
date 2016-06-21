@@ -15,7 +15,6 @@ namespace ProjectGranharngn
 
         private Player controleObject;
         
-
         public GameMap() {
 
             gameObject = new List<IDrawable>();
@@ -26,23 +25,34 @@ namespace ProjectGranharngn
 
             controleObject = GetControleObject();
 
-            Interact += ControleObject.InteractHandler;
+            
+                ControleObject.GetInretsect += this.GetIntersect;
+            
+                
         }
         public Player ControleObject
         {
             get { return controleObject; }
         }
 
-        
+        public void UpdateAll() {
+            foreach (DrawingObject item in gameObject) {
+                item.Update();
+            }
+        }
 
-        public void UpdatePosition(object sender, KeyEventArgs e) {
+        public void GetIntersect(object sender, EventArgs e) {
            
             foreach (DrawingObject item in gameObject)
             {
-                if (ControleObject.DrawRect.IntersectsWith(item.DrawRect) && ControleObject != item)
+                if (((DrawingObject)sender).DrawRect.IntersectsWith(item.DrawRect) && sender != item)
                 {
-                    Interact(this,EventArgs.Empty);
+                    //((DrawingObject)sender).xStartPos = 1;
+                    //((DrawingObject)sender).yStartPos = 1;
+                    ((DynamicObject)sender).isCanMove = false;
                 }
+                else ((DynamicObject)sender).isCanMove = true;
+
             }
         }
 
@@ -70,7 +80,7 @@ namespace ProjectGranharngn
         {
             return GetEnumerator();
         }
-        public event EventHandler Interact;
+        public static event EventHandler Interact;
     }
 
   

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
 namespace ProjectGranharngn
 {
     public abstract class DynamicObject : DrawingObject
@@ -11,6 +12,8 @@ namespace ProjectGranharngn
         protected int vSpeed;
         protected int health;
 
+        public bool isCanMove;
+
         protected DynamicObject() : base() { health = 1; }
 
         protected DynamicObject(int xPos, int yPos) : base(xPos, yPos) { health = 1; }
@@ -18,7 +21,7 @@ namespace ProjectGranharngn
         protected DynamicObject(int health, int xPos, int yPos, int width, int height, int speed) : base(xPos, yPos, width, height) {  }
 
 
-        public int HSpeed {
+        public virtual int HSpeed {
             get { return hSpeed; }
             set {
                 if (hSpeed >= 0)
@@ -30,7 +33,7 @@ namespace ProjectGranharngn
                 }
             }
         }
-        public int VSpeed
+        public virtual int VSpeed
         {
             get { return vSpeed; }
             set
@@ -44,7 +47,7 @@ namespace ProjectGranharngn
             }
         }
 
-        public int Health {
+        public virtual int Health {
             get { return health; }
             set
             {
@@ -55,7 +58,33 @@ namespace ProjectGranharngn
                 else
                     health = 0;
             }
+        }
+        public virtual void Move(int x, int y)
+        {
+            if (GetInretsect != null) {
+                
+                this.xStartPos += x;
+                this.yStartPos += y;
+                GetInretsect(this, EventArgs.Empty);
+            }
+
+
+            if (!isCanMove)
+            {
+                xStartPos -= x;
+                yStartPos -= y;
+            }
             
+        }
+
+        public event EventHandler GetInretsect;
+
+        public override void Update()
+        {
+           
+            
+
+
         }
     }
 }

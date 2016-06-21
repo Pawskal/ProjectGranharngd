@@ -10,25 +10,19 @@ namespace ProjectGranharngn
     {
         private const int CONSOLE_HEIGHT = 25;
         private const int CONSOLE_WIDTH = 80;
-
-        //public static Render render;
-
-        //public static Render Initialize() {
-        //    if (render == null)
-        //        return render = new Render();
-        //    else throw new Exception();
-        //}
-
-        public static Render Instance {
-            get {
-                return Singleton<Render>.Instance;
-            }
-        }
-
+        
         private ObjectData[,] screenBuffer;
         private ObjectData[,] backBuffer;
 
         private bool isScreenChange;
+
+        public static Render Instance
+        {
+            get
+            {
+                return Singleton<Render>.Instance;
+            }
+        }
 
         private Render(){
 
@@ -60,7 +54,8 @@ namespace ProjectGranharngn
             backBuffer[xPos, yPos].symbolColor = symbolColor;
             backBuffer[xPos, yPos].backgroundColor = backgroundColor;
 
-            isScreenChange = true;
+            if (!isScreenChange)
+                isScreenChange = true;
         }
         public void DrawText(String text, int xPos, int yPos) {
             Console.ResetColor();
@@ -101,7 +96,6 @@ namespace ProjectGranharngn
                     DrawChar(' ', ConsoleColor.Black, ConsoleColor.Black, i, j);
                 }
             }
-            Console.SetCursorPosition(0,0);
         }
         private void ResizeScreen() {
             Console.BufferHeight = CONSOLE_HEIGHT;

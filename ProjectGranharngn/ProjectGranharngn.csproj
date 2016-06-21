@@ -46,6 +46,7 @@
     <Compile Include="BricWall.cs" />
     <Compile Include="IControlable.cs" />
     <Compile Include="IDrawable.cs" />
+    <Compile Include="IntersectEventArgs.cs" />
     <Compile Include="KeyHandler.cs" />
     <Compile Include="ObjectData.cs" />
     <Compile Include="CharEnum.cs" />

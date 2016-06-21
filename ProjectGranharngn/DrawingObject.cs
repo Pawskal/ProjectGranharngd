@@ -56,5 +56,6 @@ namespace ProjectGranharngn
                 }
                 else drawRect.Y = value;
             } }
+        public virtual void Update() { } //заглушка
     }
 }

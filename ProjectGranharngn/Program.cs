@@ -15,8 +15,7 @@ namespace ProjectGranharngn {
             KeyEventHandler keyEventHandler = new KeyEventHandler();
             GameMap gameMap = new GameMap();
             
-            keyEventHandler.IsKeyAvilable += gameMap.ControleObject.MoveEvent;
-            keyEventHandler.IsKeyAvilable += gameMap.UpdatePosition;
+            keyEventHandler.IsKeyAvilable += gameMap.ControleObject.KeyAction;
             keyEventHandler.IsKeyAvilable += Program.ExitEvent;
             
             
@@ -36,6 +35,7 @@ namespace ProjectGranharngn {
 
             } while (isAcive);
 
+            
             render.DrawText("GAME OVER", 36, 12);
             render.Update();
                 

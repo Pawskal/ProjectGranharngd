@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProjectGranharngn
 {
-    public class Player : DynamicObject
+    public class Player : DynamicObject, IControlable
     {
         public Player() : base() {  }
 
@@ -23,26 +23,21 @@ namespace ProjectGranharngn
             }
         }
 
-        private void Move(int x, int y) {
-            this.xStartPos += x;
-            this.yStartPos += y;
-        }
-
-        public void MoveEvent(object sender, KeyEventArgs e)
+        public void KeyAction(object sender, KeyEventArgs e)
         {
             switch (e.key)
             {
                 case ConsoleKey.DownArrow:
-                    Move(0, 1);
+                        Move(0, 1);
                     break;
                 case ConsoleKey.LeftArrow:
-                    Move(-1, 0);
+                        Move(-1, 0);
                     break;
                 case ConsoleKey.RightArrow:
-                    Move(1, 0);
+                        Move(1, 0);
                     break;
                 case ConsoleKey.UpArrow:
-                    Move(0, -1);
+                        Move(0, -1);
                     break;
                 default:
                     break;

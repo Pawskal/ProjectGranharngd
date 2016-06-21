@@ -8,6 +8,6 @@ namespace ProjectGranharngn
 {
     public interface IControlable
     {
-        void Update();
+        void KeyAction(object sender, KeyEventArgs e);
     }
 }
