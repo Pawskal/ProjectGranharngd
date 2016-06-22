@@ -6,6 +6,8 @@ using System.Text;
 
 namespace ProjectGranharngn
 {
+    public  delegate bool tGetIntersect(DynamicObject sender, IntersectEventArgs e);
+
     public abstract class DynamicObject : DrawingObject
     {
         protected int hSpeed;
@@ -62,22 +64,18 @@ namespace ProjectGranharngn
         public virtual void Move(int x, int y)
         {
             if (GetInretsect != null) {
-                
-                this.xStartPos += x;
-                this.yStartPos += y;
-                GetInretsect(this, EventArgs.Empty);
-            }
 
-
-            if (!isCanMove)
-            {
-                xStartPos -= x;
-                yStartPos -= y;
+                if (GetInretsect(this, new IntersectEventArgs(DrawRect,x,y)))
+                {
+                    xStartPos += x;
+                    yStartPos += y;
+                } 
             }
-            
         }
 
-        public event EventHandler GetInretsect;
+        public event tGetIntersect GetInretsect;
+
+        
 
         public override void Update()
         {

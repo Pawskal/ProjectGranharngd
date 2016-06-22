@@ -16,3 +16,9 @@ D:\Development\Visual Studio\C#\ProjectGranharngn\ProjectGranharngn\obj\Debug\Pr
 D:\Development\Visual Studio\C#\ProjectGranharngn\ProjectGranharngn\bin\Debug\ProjectGranharngn.exe
 D:\Development\Visual Studio\C#\ProjectGranharngn\ProjectGranharngn\bin\Debug\ProjectGranharngn.pdb
 D:\Development\Visual Studio\C#\ProjectGranharngn\ProjectGranharngn\obj\Debug\ProjectGranharngn.csprojResolveAssemblyReference.cache
+C:\Users\user\Downloads\ProjectGranharngd-master\ProjectGranharngd-master\ProjectGranharngn\bin\Debug\ProjectGranharngn.exe.config
+C:\Users\user\Downloads\ProjectGranharngd-master\ProjectGranharngd-master\ProjectGranharngn\obj\Debug\ProjectGranharngn.exe
+C:\Users\user\Downloads\ProjectGranharngd-master\ProjectGranharngd-master\ProjectGranharngn\obj\Debug\ProjectGranharngn.pdb
+C:\Users\user\Downloads\ProjectGranharngd-master\ProjectGranharngd-master\ProjectGranharngn\bin\Debug\ProjectGranharngn.exe
+C:\Users\user\Downloads\ProjectGranharngd-master\ProjectGranharngd-master\ProjectGranharngn\bin\Debug\ProjectGranharngn.pdb
+C:\Users\user\Downloads\ProjectGranharngd-master\ProjectGranharngd-master\ProjectGranharngn\obj\Debug\ProjectGranharngn.csprojResolveAssemblyReference.cache

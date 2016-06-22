@@ -41,19 +41,17 @@ namespace ProjectGranharngn
             }
         }
 
-        public void GetIntersect(object sender, EventArgs e) {
-           
-            foreach (DrawingObject item in gameObject)
-            {
-                if (((DrawingObject)sender).DrawRect.IntersectsWith(item.DrawRect) && sender != item)
-                {
-                    //((DrawingObject)sender).xStartPos = 1;
-                    //((DrawingObject)sender).yStartPos = 1;
-                    ((DynamicObject)sender).isCanMove = false;
-                }
-                else ((DynamicObject)sender).isCanMove = true;
+        public bool GetIntersect(DynamicObject sender, IntersectEventArgs e) {
 
+          foreach (DrawingObject item in gameObject)
+            {
+                if (e.rect.IntersectsWith(item.DrawRect) && sender.DrawRect != item.DrawRect)
+                {
+                    e.IntersectedObj = item;
+                    return false; // не может переместится
+                }
             }
+        return true; //перемешение;
         }
 
         private Player GetControleObject(){

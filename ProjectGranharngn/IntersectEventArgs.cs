@@ -10,9 +10,14 @@ namespace ProjectGranharngn
     public class IntersectEventArgs : EventArgs
     {
         public Rectangle rect;
-        public IntersectEventArgs(Rectangle drawRect)
+
+       
+        public DrawingObject IntersectedObj;
+        public IntersectEventArgs(Rectangle drawRect, int x, int y)
         {
-            drawRect = this.rect;
+            rect = drawRect;
+            rect.X += x;
+            rect.Y += y;
         }
     }
 }
