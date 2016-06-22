@@ -10,7 +10,6 @@ namespace ProjectGranharngn
 {
     public class GameMap : IEnumerable<IDrawable>
     {
-       
         public List<IDrawable> gameObject;
 
         private Player controleObject;
@@ -26,7 +25,7 @@ namespace ProjectGranharngn
             controleObject = GetControleObject();
 
             
-                ControleObject.GetInretsect += this.GetIntersect;
+            ControleObject.GetInretsect += this.GetIntersect;
             
                 
         }
@@ -78,7 +77,6 @@ namespace ProjectGranharngn
         {
             return GetEnumerator();
         }
-        public static event EventHandler Interact;
     }
 
   

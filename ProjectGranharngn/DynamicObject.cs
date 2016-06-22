@@ -2,26 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 
 namespace ProjectGranharngn
 {
-    public  delegate bool tGetIntersect(DynamicObject sender, IntersectEventArgs e);
-
-    public abstract class DynamicObject : DrawingObject
-    {
+        public abstract class DynamicObject : DrawingObject
+        {
         protected int hSpeed;
         protected int vSpeed;
         protected int health;
-
-        public bool isCanMove;
 
         protected DynamicObject() : base() { health = 1; }
 
         protected DynamicObject(int xPos, int yPos) : base(xPos, yPos) { health = 1; }
 
         protected DynamicObject(int health, int xPos, int yPos, int width, int height, int speed) : base(xPos, yPos, width, height) {  }
-
 
         public virtual int HSpeed {
             get { return hSpeed; }
@@ -53,12 +49,12 @@ namespace ProjectGranharngn
             get { return health; }
             set
             {
-                if (health > 0)
+                if (health < 0)
                 {
-                    health = value;
+                    health = 0;
                 }
                 else
-                    health = 0;
+                    health = value;
             }
         }
         public virtual void Move(int x, int y)
@@ -73,16 +69,26 @@ namespace ProjectGranharngn
             }
         }
 
-        public event tGetIntersect GetInretsect;
+        public event GetIntersectHandler GetInretsect;
 
-        
+        public delegate bool GetIntersectHandler(DynamicObject sender, IntersectEventArgs e);
 
         public override void Update()
         {
-           
-            
+
+        }
+    }
+    public class IntersectEventArgs : EventArgs
+    {
+        public Rectangle rect;
 
 
+        public DrawingObject IntersectedObj;
+        public IntersectEventArgs(Rectangle drawRect, int x, int y)
+        {
+            rect = drawRect;
+            rect.X += x;
+            rect.Y += y;
         }
     }
 }

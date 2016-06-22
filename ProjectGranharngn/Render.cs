@@ -102,7 +102,7 @@ namespace ProjectGranharngn
             Console.BufferWidth = CONSOLE_WIDTH;
             Console.SetWindowSize(Console.WindowWidth, Console.WindowHeight + 1);
         }
-        public void DrawObject(DrawingObject obj) {
+        public virtual void DrawObject(DrawingObject obj) {
 
             for (int i = 0; i < obj.Width; i++)
             {
