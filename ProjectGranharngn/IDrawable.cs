@@ -13,6 +13,6 @@ namespace ProjectGranharngn
             get;
         }
 
-        Rectangle DrawRect { get; set; }
+        RectangleF DrawRect { get; set; }
     }
 }

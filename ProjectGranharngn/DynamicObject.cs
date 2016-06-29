@@ -7,19 +7,28 @@ using System.Drawing;
 
 namespace ProjectGranharngn
 {
+
+    public enum Direction {
+        Up, Down, Stand, Left, Right
+    }
+
         public abstract class DynamicObject : DrawingObject
         {
-        protected int hSpeed;
-        protected int vSpeed;
+        protected float hSpeed;
+        protected float vSpeed;
         protected int health;
 
         protected DynamicObject() : base() { health = 1; }
 
         protected DynamicObject(int xPos, int yPos) : base(xPos, yPos) { health = 1; }
 
-        protected DynamicObject(int health, int xPos, int yPos, int width, int height, int speed) : base(xPos, yPos, width, height) {  }
+        protected DynamicObject(int health, int xPos, int yPos, int width, int height, int hSpeed, int vSpeed) : base(xPos, yPos, width, height) {
+            this.HSpeed = hSpeed;
+            this.VSpeed = vSpeed;
+            this.Health = health;
+        }
 
-        public virtual int HSpeed {
+        public virtual float HSpeed {
             get { return hSpeed; }
             set {
                 if (hSpeed >= 0)
@@ -31,16 +40,16 @@ namespace ProjectGranharngn
                 }
             }
         }
-        public virtual int VSpeed
+        public virtual float VSpeed
         {
             get { return vSpeed; }
             set
             {
-                if (vSpeed >= 0)
-                    vSpeed = value;
+                if (vSpeed <= 0)
+                    vSpeed = 0;
                 else
                 {
-                   vSpeed = 0;
+                   vSpeed = value;
                 }
             }
         }
@@ -57,34 +66,52 @@ namespace ProjectGranharngn
                     health = value;
             }
         }
-        public virtual void Move(int x, int y)
+        public virtual void Move(Direction dir, long time)
         {
             if (GetInretsect != null) {
+                float x = (HSpeed * time)/1000;
+                float y = (VSpeed * time)/1000;
+                switch (dir) {
+                    case Direction.Up:
+                        
+                        if (GetInretsect(this, new IntersectEventArgs(DrawRect, 0, y)))
+                        {
+                            yPos -= y;
+                        }
+                        break;
+                    case Direction.Down:
+                        if (GetInretsect(this, new IntersectEventArgs(DrawRect, 0, y)))
+                        {
+                           yPos += y;
+                        }
+                        break;
+                    case Direction.Left:
+                        if (GetInretsect(this, new IntersectEventArgs(DrawRect, x, 0)))
+                        {
+                            xPos -= x;
+                        }
+                        break;
+                    case Direction.Right:
+                        if (GetInretsect(this, new IntersectEventArgs(DrawRect, x, 0)))
+                        {
+                            xPos += x;
 
-                if (GetInretsect(this, new IntersectEventArgs(DrawRect,x,y)))
-                {
-                    xStartPos += x;
-                    yStartPos += y;
-                } 
+                        }
+                        break;
+                }
             }
         }
 
         public event GetIntersectHandler GetInretsect;
 
         public delegate bool GetIntersectHandler(DynamicObject sender, IntersectEventArgs e);
-
-        public override void Update()
-        {
-
-        }
+        
     }
     public class IntersectEventArgs : EventArgs
     {
-        public Rectangle rect;
-
-
+        public RectangleF rect;
         public DrawingObject IntersectedObj;
-        public IntersectEventArgs(Rectangle drawRect, int x, int y)
+        public IntersectEventArgs(RectangleF drawRect, float x, float y)
         {
             rect = drawRect;
             rect.X += x;

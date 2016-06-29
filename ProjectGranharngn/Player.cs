@@ -11,7 +11,7 @@ namespace ProjectGranharngn
 
         public Player(int xPos, int yPos) : base(xPos, yPos) {  }
 
-        public Player(int health, int xPos, int yPos, int width, int height, int speed) : base(health, xPos, yPos, width, height, speed) {
+        public Player(int health, int xPos, int yPos, int width, int height, int hSpeed, int vSpeed) : base(health, xPos, yPos, width, height, hSpeed, vSpeed) {
             for (int i = 0; i < this.Width; i++)
             {
                 for (int j = 0; j < this.Height; j++)
@@ -21,6 +21,7 @@ namespace ProjectGranharngn
                     this.data[i, j].backgroundColor = ConsoleColor.Black;
                 }
             }
+            
         }
 
         public void KeyAction(object sender, KeyEventArgs e)
@@ -28,16 +29,16 @@ namespace ProjectGranharngn
             switch (e.key)
             {
                 case ConsoleKey.DownArrow:
-                        Move(0, 1);
+                        Move(Direction.Down, e.pressedTime);
                     break;
                 case ConsoleKey.LeftArrow:
-                        Move(-1, 0);
+                        Move(Direction.Left, e.pressedTime);
                     break;
                 case ConsoleKey.RightArrow:
-                        Move(1, 0);
+                        Move(Direction.Right, e.pressedTime);
                     break;
                 case ConsoleKey.UpArrow:
-                        Move(0, -1);
+                        Move(Direction.Up, e.pressedTime);
                     break;
                 default:
                     break;

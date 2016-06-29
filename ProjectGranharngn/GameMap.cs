@@ -19,7 +19,7 @@ namespace ProjectGranharngn
             gameObject = new List<IDrawable>();
             
 
-            gameObject.Add(new Player(100, 5, 5, 2, 2, 5));
+            gameObject.Add(new Player(1000000, 5, 5, 2, 2, 300, 350));
             gameObject.Add(new SteelWall(100, 1, 10, 10, 1));
 
             controleObject = GetControleObject();
@@ -34,11 +34,7 @@ namespace ProjectGranharngn
             get { return controleObject; }
         }
 
-        public void UpdateAll() {
-            foreach (DrawingObject item in gameObject) {
-                item.Update();
-            }
-        }
+        
 
         public bool GetIntersect(DynamicObject sender, IntersectEventArgs e) {
 
@@ -70,8 +66,7 @@ namespace ProjectGranharngn
             {
                 yield return item;
             }
-            //return gameObject.GetEnumerator();
-        }
+         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {

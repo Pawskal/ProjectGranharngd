@@ -116,7 +116,7 @@ namespace ProjectGranharngn
             {
                 for (int j = 0; j < obj.Height; j++)
                 {
-                    DrawChar(obj[i, j].symbol, obj[i, j].symbolColor, obj[i, j].backgroundColor, obj.xStartPos+i, obj.yStartPos+j);
+                    DrawChar(obj[i, j].symbol, obj[i, j].symbolColor, obj[i, j].backgroundColor, (int)obj.xPos+i, (int)obj.yPos+j);
                 }
             }
         }

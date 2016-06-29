@@ -10,7 +10,7 @@ namespace ProjectGranharngn
     public abstract class DrawingObject : IDrawable
     {
 
-        protected Rectangle drawRect;
+        protected RectangleF drawRect;
 
         protected ObjectData[,] data;
 
@@ -33,20 +33,23 @@ namespace ProjectGranharngn
             get { return data[i, j]; }
         }
 
-        public Rectangle DrawRect { get { return drawRect; }
+        public RectangleF DrawRect { get { return drawRect; }
                                     set { drawRect = value; } }
 
-        public int Width { get { return drawRect.Width; } }
-        public int Height { get { return drawRect.Height; } }
-        public int xStartPos { get { return drawRect.X; }
+        public int Width { get { return (int)drawRect.Width; } }
+        public int Height { get { return (int)drawRect.Height; } }
+        public float xPos { get { return drawRect.X; }
                                set {
                                    if (value < 0)
                                        {
                                          drawRect.X = 0;
                                    }
-                                   else drawRect.X = value;
+                if (value >= 80) {
+                    drawRect.X = 78;
+                }
+                else drawRect.X = value;
                                    } }
-        public int yStartPos
+        public float yPos
         {
             get { return drawRect.Y; }
                                set
@@ -54,6 +57,9 @@ namespace ProjectGranharngn
                 if (value < 0)
                 {
                     drawRect.Y = 0;
+                }
+                if (value >= 25) {
+                    drawRect.Y = 23;
                 }
                 else drawRect.Y = value;
             } }

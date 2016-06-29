@@ -8,20 +8,42 @@ namespace ProjectGranharngn
 {
     public class KeyEventArgs : EventArgs {
         public ConsoleKey key;
-        public KeyEventArgs(ConsoleKey key) {
+        public long pressedTime;
+        public KeyEventArgs(ConsoleKey key, long pressedTime) {
+            this.pressedTime = pressedTime;
             this.key = key;
-            FPSCounter.Instance.
-
         }
     }
     public class KeyEventHandler{
         public event EventHandler<KeyEventArgs> IsKeyAvilable;
+
+        private long pressedTime;
+
+        private long lastTime;
+
+        ConsoleKey currentKey;
+
+        public KeyEventHandler() {
+            
+            lastTime = 0;
+            
+        }
+
         public void GetKeyState(){
-            if (IsKeyAvilable != null)
-            {
-                IsKeyAvilable(this, new KeyEventArgs(Key));
+
+            currentKey = Key;
+
+            if (currentKey != ConsoleKey.NoName) {
+
+                pressedTime = FPSCounter.Instance.ElapsedMilliseconds - lastTime;
+
+                IsKeyAvilable?.Invoke(this, new KeyEventArgs(currentKey, pressedTime));
+
             }
-            else throw new Exception();
+
+            lastTime = FPSCounter.Instance.ElapsedMilliseconds;
+
+
         }
         public static ConsoleKey Key
         {

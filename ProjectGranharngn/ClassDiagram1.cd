@@ -17,7 +17,7 @@
   <Class Name="ProjectGranharngn.DrawingObject" Collapsed="true">
     <Position X="3.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAABCAAAAAACAAAEEAAQAAAAEAAAAAQAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAABAAAAAAACAAAAEAAQAAAAMAAAAAQAQAAAAA=</HashCode>
       <FileName>DrawingObject.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -25,7 +25,7 @@
   <Class Name="ProjectGranharngn.DynamicObject" Collapsed="true">
     <Position X="7.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQACAAAAIAAAAAAAAgAAQAIAAAAAAACAAAAAgAAAAg=</HashCode>
+      <HashCode>AAAACAAAAIAAAAAAAAgAAQAIAAAAAAACAAAAAgAAAAg=</HashCode>
       <FileName>DynamicObject.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -39,36 +39,22 @@
   <Class Name="ProjectGranharngn.FPSCounter" Collapsed="true">
     <Position X="9.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAgQAAAAAAACAQBAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgQAAAAEAACAQBAAAAAAAAA=</HashCode>
       <FileName>FPSCounter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectGranharngn.GameMap" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="11.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAABQEAAAEAAAAAAAAgAAEAgQAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAABQEAAAEAAAAAAAAAAAEAgQAAAAAAAA=</HashCode>
       <FileName>GameMap.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.155" Collapsed="true" />
   </Class>
-  <Class Name="ProjectGranharngn.KeyEventArgs" Collapsed="true">
-    <Position X="9.75" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>KeyHandler.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ProjectGranharngn.KeyEventHandler" Collapsed="true">
-    <Position X="11.5" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
-      <FileName>KeyHandler.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="ProjectGranharngn.Player" Collapsed="true">
     <Position X="7.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -97,7 +83,7 @@
   <Class Name="ProjectGranharngn.Render" Collapsed="true">
     <Position X="9.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAACEAAAAAQAgAAAAIAAAAAQAEAAAFAAIA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Render.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -122,6 +108,20 @@
       <FileName>Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="ProjectGranharngn.KeyEventArgs" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KeyHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectGranharngn.KeyEventHandler" Collapsed="true">
+    <Position X="11.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>KeyHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Struct Name="ProjectGranharngn.ObjectData" Collapsed="true">
     <Position X="9.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
@@ -139,7 +139,7 @@
   <Interface Name="ProjectGranharngn.IDrawable" Collapsed="true">
     <Position X="11.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IDrawable.cs</FileName>
     </TypeIdentifier>
   </Interface>
