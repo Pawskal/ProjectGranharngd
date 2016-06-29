@@ -19,7 +19,7 @@ namespace ProjectGranharngn
             gameObject = new List<IDrawable>();
             
 
-            gameObject.Add(new Player(1000000, 5, 5, 2, 2, 300, 350));
+            gameObject.Add(new Player(1000000, 5, 5, 2, 2, 200, 200));
             gameObject.Add(new SteelWall(100, 1, 10, 10, 1));
 
             controleObject = GetControleObject();

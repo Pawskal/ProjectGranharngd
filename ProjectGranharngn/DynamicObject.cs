@@ -45,7 +45,7 @@ namespace ProjectGranharngn
             get { return vSpeed; }
             set
             {
-                if (vSpeed <= 0)
+                if (value <= 0)
                     vSpeed = 0;
                 else
                 {
