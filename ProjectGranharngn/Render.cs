@@ -6,16 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjectGranharngn
 {
-    class Render
+    public class Render : RenderSystem
     {
-        private const int CONSOLE_HEIGHT = 25;
-        private const int CONSOLE_WIDTH = 80;
-        
-        private ObjectData[,] screenBuffer;
-        private ObjectData[,] backBuffer;
-
-        private bool isScreenChange;
-
         public static Render Instance
         {
             get
@@ -24,7 +16,23 @@ namespace ProjectGranharngn
             }
         }
 
-        private Render(){
+        private Render() : base(25,80) {} 
+    }
+
+    public abstract class RenderSystem
+    {
+        private int CONSOLE_HEIGHT;
+        private int CONSOLE_WIDTH;
+        
+        private ObjectData[,] screenBuffer;
+        private ObjectData[,] backBuffer;
+
+        private bool isScreenChange;
+
+        protected RenderSystem(int consoleHeight, int consoleWidth){
+
+            CONSOLE_HEIGHT = consoleHeight;
+            CONSOLE_WIDTH = consoleWidth;
 
             ResizeScreen();
 

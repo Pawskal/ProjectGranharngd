@@ -33,7 +33,8 @@ namespace ProjectGranharngn
             get { return data[i, j]; }
         }
 
-        public Rectangle DrawRect { get { return drawRect; } }
+        public Rectangle DrawRect { get { return drawRect; }
+                                    set { drawRect = value; } }
 
         public int Width { get { return drawRect.Width; } }
         public int Height { get { return drawRect.Height; } }

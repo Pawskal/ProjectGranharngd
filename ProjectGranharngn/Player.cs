@@ -43,10 +43,5 @@ namespace ProjectGranharngn
                     break;
             }
         }
-            public void InteractHandler(object sender, EventArgs e) {
-            this.xStartPos = 1;
-            this.yStartPos = 1;
-            this.Health--;
-        }
     }
 }

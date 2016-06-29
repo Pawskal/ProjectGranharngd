@@ -13,7 +13,7 @@ namespace ProjectGranharngn
         int temp;
         long frameTime;
         long lastTime;
-
+        
         public static FPSCounter Instance {
             get {
                 return Singleton<FPSCounter>.Instance;
@@ -31,14 +31,16 @@ namespace ProjectGranharngn
         public string GetFPS() {
             temp++;
             frameTime = ElapsedMilliseconds - lastTime;
-            
+
             if (frameTime >= 1000)
-	        {
-		        fps = temp;
+            {
+                fps = temp;
                 temp = 0;
                 lastTime = ElapsedMilliseconds;
-	        }
-            return "FPS: " + fps.ToString(); 
+            }
+            return "FPS: " + fps.ToString();
         }
+
+        public long FrameTime { get { return frameTime; } }
     }
 }

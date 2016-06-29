@@ -10,6 +10,8 @@ namespace ProjectGranharngn
         public ConsoleKey key;
         public KeyEventArgs(ConsoleKey key) {
             this.key = key;
+            FPSCounter.Instance.
+
         }
     }
     public class KeyEventHandler{

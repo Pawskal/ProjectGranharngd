@@ -27,7 +27,10 @@ namespace ProjectGranharngn
                     instance = CreateInstance();
                     return instance;
                 }
-                else throw new SingletonException();
+                else {
+                    return instance;
+                    throw new SingletonException();
+                } 
             }
         }
     }
